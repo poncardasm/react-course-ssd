@@ -1,0 +1,41 @@
+{
+  "name": "react-course-ssd",
+  "private": true,
+  "version": "1.0.0",
+  "description": "React course notes and lesson apps",
+  "type": "module",
+  "packageManager": "pnpm@10.19.0",
+  "scripts": {
+    "dev:01": "pnpm --filter lesson-01 dev",
+    "dev:02": "pnpm --filter lesson-02 dev",
+    "dev:03": "pnpm --filter lesson-03 dev",
+    "dev:04": "pnpm --filter lesson-04 dev",
+    "dev:05": "pnpm --filter lesson-05 dev",
+    "dev:all": "pnpm -r run dev",
+    "build:all": "pnpm -r run build",
+    "lint:all": "pnpm -r run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:all": "pnpm -r run format",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,css,html,md}": [
+      "prettier --write"
+    ]
+  }
+}
